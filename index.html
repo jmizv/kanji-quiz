@@ -1,0 +1,45 @@
+<html>
+<head>
+    <title>Kanji Quiz</title>
+    <link rel="stylesheet" href="s.css">
+    <link rel="shortcut icon" href="data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8' standalone='no'%3F%3E%3Csvg width='32' height='32' viewBox='0 0 8.4666665 8.4666666' version='1.1' id='svg1' xmlns='http://www.w3.org/2000/svg' xmlns:svg='http://www.w3.org/2000/svg'%3E%3Cg id='l1'%3E%3Cpath style='stroke-width:0.1' d='M 0.26458337,2.1352642 V 4.3653236 H 0.96383921 V 2.8156213 H 7.4744785 V 4.3653236 H 8.2020833 V 2.1352642 H 4.5924103 V 1.0958298 H 3.8459072 v 1.0394344 z' id='p1' /%3E%3Cpath style='stroke-width:0.1' d='M 5.1529969,4.3658527 V 5.4398225 H 3.1161579 V 4.3658527 H 2.2520444 V 5.4398225 H 0.2645833 V 6.2175246 H 2.2520444 V 7.1063271 H 3.1161579 V 6.2175246 h 2.036839 v 0.8888025 h 0.876458 V 6.2175246 H 8.2020834 V 5.4398225 H 6.0294549 V 4.3658527 Z' id='p1' /%3E%3C/g%3E%3C/svg%3E">
+    <script src="kanjidata.js"></script>
+    <script src="d.js"></script>
+    <script src="jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#solutions div").on("click", function (elem) {
+                clearSelection();
+                $(this).css({"background-color":"#88ff88","font-weight":"bold"});
+                current.selected = $(this).data("index");
+                $("#check").addClass("clickable");
+            });
+            $("#check").click(function (elem) {
+                checkAnswer();
+                $("#check").removeClass("clickable");
+            });
+            initNotShown();
+            generateQuestion();
+        }); 
+    </script>
+</head>
+
+<body>
+    <div id="content-wrapper">
+        <div id="header" class="white-bg">Quiz</div>
+        <div id="question" class="white-bg">Question</div>
+        <div id="character" class="white-bg"><span id="character-bigger"></span> <span id="character-normal"></span> <span id="character-smaller"></span></div>
+        <div id="solutions" class="white-bg">
+            <div id="solution1" data-index="0">1</div>
+            <div id="solution2" data-index="1">2</div>
+            <div id="solution3" data-index="2">3</div>
+            <div id="solution4" data-index="3">4</div>
+        </div>
+        <div id="explanation" class="white-bg">&nbsp;</div>
+        <div id="check" class="white-bg">Check</div>
+        <div id="score" class="white-bg">Start solving questions to view your score.</div>
+        <div id="history" class="white-bg"><ul id="history-list"></ul></div>
+    </div>
+</body>
+
+</html>

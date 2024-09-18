@@ -1,0 +1,82 @@
+body {
+    display: flex;
+    justify-content: center;
+}
+
+.selected {
+    background-color:#80ff80;
+}
+
+#solutions div:hover {
+    background-color:#eeeeee;
+}
+
+#check {
+    text-align: center;
+    transition: background-color 2s ease-in-out;
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+.correct {
+    background-color:#0F0;
+}
+
+.wrong {
+    background-color:#F00;
+}
+
+#content-wrapper {
+    width:400px;
+    display:inline;
+    justify-content: center;
+    background-color: #000000;
+}
+
+.white-bg {
+    background-color: #ffffff;
+}
+
+#header {
+    font-size: 32pt;
+    font-weight: bold;
+    text-align: center;
+}
+
+#question {
+    text-align: center;
+}
+
+/*#solutions {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}*/
+
+#solutions div, #score, #explanation {
+    padding-left:5px;
+    padding-right:5px;
+    background-color: #ffffff;
+}
+
+div {
+    border: 1px #000000 solid;
+    margin: 2px;
+}
+
+#character {
+    text-align: center;
+}
+
+#character-bigger {
+    font-size: 44pt;
+}
+
+#character-normal {
+    font-size: 28pt;
+}
+
+#character-smaller {
+    font-size: 12pt;
+}
